@@ -1,7 +1,7 @@
 COMPRESS_JS=weddingWebsite.js
 COMPRESS_CSS=./ui/css/style.css
-SASS_PATH=./ui/sass/
-SASS_FILE=$(SASS_PATH)/style.scss
+SCSS_PATH=./ui/scss/
+SCSS_FILE=$(SCSS_PATH)/style.scss
 JS_PATH=./ui/js/
 JS_FILE=$(JS_PATH)main.js
 

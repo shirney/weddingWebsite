@@ -1,0 +1,38 @@
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+.intro-header {
+    margin-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: url(../images/NTU/home.png) no-repeat center center;
+    background-size: cover;
+    height: 100%;
+}
+
+#home {
+    display: block;
+    position: absolute;
+    top: 0px;
+}
+.img-abs {
+	position: absolute;
+}
+.about-us {
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+}
+.about-us-hover {
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+}

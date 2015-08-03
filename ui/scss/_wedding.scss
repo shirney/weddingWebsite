@@ -1,3 +1,8 @@
+$theme-ntu: NTU;
+$theme-garden: Garden;
+$theme-beach: Beach;
+$themes: $theme-ntu $theme-garden $theme-beach;
+
 .navbar .navbar-nav {
   display: inline-block;
   float: none;
@@ -13,9 +18,21 @@
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(../images/NTU/home.png) no-repeat center center;
+    @each $theme in $themes {
+    	.#{$theme} & {
+    		background-image: url("../images/"+$theme+"/home.png");
+    		background-repeat: no-repeat;
+    		background-position: center center;
+    	}
+    }
+    
     background-size: cover;
     height: 100%;
+}
+.theme-btn {
+	position:absolute;
+	right: 40px;
+	line-height: 50px;
 }
 
 #home {

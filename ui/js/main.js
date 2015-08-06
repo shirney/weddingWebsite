@@ -7,7 +7,14 @@ $(function() {
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });
-    $(aboutUsContainer).height($(aboutUsImg).height());
+    var setAboutUsHeight = function(){
+    	$(aboutUsImgContainer).height($(aboutUsImg).height());
+    	$(aboutUsTextContainer).height($(aboutUsImg).height());
+    };
+    setAboutUsHeight();
+    $(window).on('resize', function(event) { 
+    	setAboutUsHeight();
+    });
     var removeBodyClass = function() {
     	$('body').removeClass('NTU');
     	$('body').removeClass('Garden');

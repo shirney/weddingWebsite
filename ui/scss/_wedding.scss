@@ -29,6 +29,9 @@ $themes: $theme-ntu $theme-garden $theme-beach;
     background-size: cover;
     height: 100%;
 }
+#introChiao, #introLin {
+	height: 50%;
+}
 .theme-btn {
 	position:absolute;
 	right: 40px;
@@ -52,4 +55,36 @@ $themes: $theme-ntu $theme-garden $theme-beach;
 	height: 100%;
 	width: 100%;
 	background-size: cover;
+}
+#btnRow {
+	bottom: 10px;
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.5);
+	width: 100%;
+	padding: 0px 5px;
+	.img-btn {
+		display: inline-block;
+		a {
+			cursor: pointer;
+			background-color: white;
+			width: 10px;
+		    height: 10px;
+		    display: block;
+		    margin: 0px 5px;
+		    border-radius: 20px;
+		}
+		/*a:before {
+			position:absolute;
+		    content: " ";
+		    border-radius: 20px;
+		    box-shadow: inset 0 1px 2px rgba(0,0,0,0.2);
+		}*/
+		a:hover {
+			background-color: #691917;
+		}
+	}
+
+}
+#aboutUsTextContainer {
+	margin-left: 20px;
 }

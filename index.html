@@ -57,13 +57,13 @@
                         <a class="page-scroll" href="#whenwhere">WHEN&WHERE</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="rsvp">RSVP</a>
+                        <a class="page-scroll" href="#rsvp">RSVP</a>
                     </li>
                 </ul>
                 <span class="theme-btn navbar-right">
-                <button id="NTU" type="button" class="btn-primary btn-sm">NTU</button>
-                <button id="Beach" type="button" class="btn-primary btn-sm">Beach</button>
-                <button id="Garden" type="button" class="btn-primary btn-sm">Garden</button>
+                <button id="NTU" type="button" class="btn btn-default btn-sm">NTU</button>
+                <button id="Beach" type="button" class="btn btn-default btn-sm">Beach</button>
+                <button id="Garden" type="button" class="btn btn-default btn-sm">Garden</button>
                 </span>
             </div>
             <!-- /.navbar-collapse -->
@@ -75,8 +75,9 @@
 
     <!-- Header -->
     <a id="home" class="page-scroll" name="home"></a>
-    <div class="intro-header">
+    <div class="intro-header col-lg-12">
     </div>
+    <div class="clearfix"></div>
     <!-- /.intro-header -->
 
     <!-- Page Content -->
@@ -84,20 +85,27 @@
     <div class="content-section-a">
         <div class="container">
             <div class="row">
-                <div id="introChiao" class="col-xs-4">
-                    我是黃國僑
-                </div>
-                <div id="aboutUsContainer" class="col-xs-4">
+                <div id="aboutUsImgContainer" class="col-lg-5 col-lg-offset-1 col-sm-5 col-sm-offset-1">
                     <div class="img-abs">
                         <img id="aboutUsImgHover" src="ui/images/NTU/aboutUs1-hover.jpg" class="about-us-hover">
                     </div>
                     <div class="img-abs">
                         <img id="aboutUsImg" src="ui/images/NTU/aboutUs1.jpg" class="about-us">
                     </div>
+                    <ul id="btnRow">
+                        <li  class="img-btn"><a></a></li>
+                        <li  class="img-btn"><a></a></li>
+                    </ul>
                 </div>
-                <div id="introLin" class="col-xs-4">
-                    我是黃琇琳
+                <div id="aboutUsTextContainer" class="col-lg-6 col-sm-5">
+                    <div id="introChiao">
+                        我是黃國僑
+                    </div>
+                    <div id="introLin">
+                        我是黃琇琳
+                    </div>
                 </div>
+                <div class="clearfix"></div>
             </div>
 
         </div>
@@ -111,14 +119,15 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+            <!--    -->
+                <div class="col-lg-5 col-lg-offset-1  col-sm-6 col-sm-push-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
                     <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
                 </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/dog.png" alt="">
+                <div class="col-lg-5  col-sm-6 col-sm-pull-6">
+                    <img class="img-responsive" src="../ui/images/NTU/transportation.jpg" alt="">
                 </div>
             </div>
 
@@ -128,7 +137,7 @@
     </div>
     <!-- /.content-section-b -->
 
-    <div class="content-section-a">
+    <div class="content-section-a" name="rsvp" id="rsvp">
 
         <div class="container">
 
@@ -140,7 +149,7 @@
                     <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/phones.png" alt="">
+                    <img class="img-responsive" src="../ui/images/NTU/form.jpg" alt="">
                 </div>
             </div>
 
@@ -187,19 +196,19 @@
                 <div class="col-lg-12">
                     <ul class="list-inline">
                         <li>
-                            <a href="#home">HOME</a>
+                            <a class="page-scroll" href="#home">HOME</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#about">ABOUT</a>
+                            <a class="page-scroll" href="#about">ABOUT</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#whenwhere">WHEN&WHERE</a>
+                            <a class="page-scroll" href="#whenwhere">WHEN&WHERE</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#rsvp">RSVP</a>
+                            <a class="page-scroll" href="#rsvp">RSVP</a>
                         </li>
                     </ul>
                     <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>

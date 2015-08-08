@@ -3,7 +3,8 @@ COMPRESS_CSS=./ui/css/style.css
 SCSS_PATH=./ui/scss/
 SCSS_FILE=$(SCSS_PATH)/style.scss
 JS_PATH=./ui/js/
-JS_FILE=$(JS_PATH)main.js
+JS_FILE= \
+$(JS_PATH)main.js
 
 all: $(COMPRESS_JS) $(COMPRESS_CSS)
 

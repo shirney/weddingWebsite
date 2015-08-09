@@ -1,6 +1,6 @@
 weddingWebsite.js
 config.codekit
 ui/js/min/*
-ui/css/style.css
+style.css
 *.DS_Store
 .sass-cache/

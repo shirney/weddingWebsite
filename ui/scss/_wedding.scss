@@ -13,22 +13,33 @@ $themes: $theme-ntu $theme-garden $theme-beach;
   text-align: center;
 }
 
-.intro-header {
-    margin-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
-    color: #f8f8f8;
+@each $theme in $themes {
+	.#{$theme} .home {
+		background-image: url("ui/images/"+$theme+"/home-mobile.jpg");
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+}
+
+@media (min-width: 991px) {
     @each $theme in $themes {
-    	.#{$theme} & {
-    		background-image: url("../images/"+$theme+"/home.png");
+    	.#{$theme} .home {
+    		background-image: url("ui/images/"+$theme+"/home.png");
     		background-repeat: no-repeat;
     		background-position: center center;
     	}
     }
-    
+}
+
+.home {
+    margin-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
     background-size: cover;
     height: 100%;
 }
+
 #introChiao, #introLin {
 	height: 50%;
 }
@@ -87,4 +98,11 @@ $themes: $theme-ntu $theme-garden $theme-beach;
 }
 #aboutUsTextContainer {
 	margin-left: 20px;
+}
+.intro {
+	font-size: 1.2em;
+}
+.introHeader {
+	font-size: 2em;
+	color: blue;
 }

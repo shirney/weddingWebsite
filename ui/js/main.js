@@ -1,5 +1,25 @@
 /* main page */
 $(function() {
+	var introChiao = "
+	我是黃國僑，台北人，會是這場婚禮的新郎，另一位是我女朋友，<br>
+	她不是我姐不是我妹，更不是我媽（不要懷疑，這一定是我聽過最失禮認錯人），<br>
+	喜歡運動，喜歡的程度大概是體脂15%，<br>
+	喜歡寫code，所以有了這個網站，<br>
+	喜歡黃琇琳，於是我們要結婚了，<br>
+	喜歡簡單的生活，興趣就這些些而已，<br>
+	我是黃國僑，歡迎大家來參加我們的婚禮。
+	";
+	var introLin = "
+	我叫黃琇琳，高雄人，是這場婚禮的新娘，另一位是我男朋友。 <br>
+	請千萬不要把他誤認為我爸 (即使你知道為什麼會誤認，也不要講出來) <br>
+	喜歡運動，雖然最近膝蓋不好，但期許自己能再次活蹦亂跳。 <br>
+	喜歡寫程式，除了把工作貢獻給程式，也即將把人生交給寫程式的人。 <br>
+	喜歡黃國僑，要跟他牽手過一輩子了。 <br>
+	喜歡對社會有所貢獻，但還在尋找屬於自己的偉大航道。<br>
+	我是黃琇琳，歡迎大家來參加我們的婚禮。
+	";
+	$('#introChiao').html(introChiao);
+	$('#introLin').html(introLin);
 	$('a.page-scroll').bind('click', function(event) {
 		var $anchor = $(this);
 		$('html, body').stop().animate({
@@ -15,7 +35,15 @@ $(function() {
 	$(window).on('resize', function(event) {
 		setAboutUsHeight();
 	});
-	var currentTheme = "NTU";
+	var themes = {
+		"NTU": {
+		aboutUsNum: 3
+	},	"Garden": {
+		aboutUsNum: 1
+	},	"Beach": {
+		aboutUsNum: 1
+	}};
+	var defaultTheme = "NTU";
 	var removeBodyClass = function() {
 		$('body').removeClass('NTU');
 		$('body').removeClass('Garden');
@@ -32,7 +60,6 @@ $(function() {
 		});
 		path = $('#aboutUsImgHover').attr('src');
 		path = path.replace(/aboutUs(\d)-hover.jpg/, "aboutUs"+num+"-hover.jpg");
-		console.log(num, path);
 		$('#aboutUsImgHover').attr("src", path);
 	};
 	var addSelectDot = function(num) {
@@ -43,6 +70,14 @@ $(function() {
 		});
 		$('#btnRow').append(dom);
 	};
+	var addBtnRow = function(theme) {
+		var aboutUsImgNum = themes[theme].aboutUsNum;
+		$('#btnRow').empty();
+		for (var i = 1; i <= aboutUsImgNum; i++) {
+			addSelectDot(i);
+		}
+	};
+	addBtnRow(defaultTheme);
 	var onChangeTheme = function(theme) {
 		var imgRootPath = "ui/images/{THEME}/aboutUs{VERSION}.jpg";
 		removeBodyClass();
@@ -58,27 +93,16 @@ $(function() {
 		path = imgRootPath.replace("{THEME}", theme);
 		path = path.replace("{VERSION}", "1-hover");
 		$('#aboutUsImgHover').attr("src", path);
-		var aboutUsImgNum = themes[theme].aboutUsNum;
-		$('#btnRow').empty();
-		for (var i = 1; i <= aboutUsImgNum; i++) {
-			addSelectDot(i);
-		}
+		addBtnRow(theme);
 	};
-	var themes = {
-		"NTU": {
-		aboutUsNum: 3
-	},	"Garden": {
-		aboutUsNum: 1
-	},	"Beach": {
-		aboutUsNum: 1
-	}};
+	
 	$.each(themes, function(key, value) {
 		$('#'+key).on('click', function(){
 			onChangeTheme(key);
 		});
 	});
 });
-var fadeTime = 800;
+var fadeTime = 200;
 $(aboutUsImg).on("mouseenter", function(){
 	$('#aboutUsImg').stop().animate({opacity:0}, fadeTime);
 });

@@ -67,7 +67,8 @@ $(function() {
 	$('#introLin').html(introLin);
 	var setAboutUsHeight = function(){
 		$('#aboutUsImgContainer').height($('#aboutUsImg').height());
-		$('#aboutUsTextContainer').height($('#aboutUsImg').height());
+		$('#aboutUsTextWrapChiao').height($('#aboutUsImg').height());
+		$('#aboutUsTextWrapLin').height($('#aboutUsImg').height());
 	};
 	var addSelectDot = function(num) {
 		var domString = '<li class="img-btn" index="{INDEX}"><a></a></li>'.replace("{INDEX}", num);

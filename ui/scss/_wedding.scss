@@ -101,8 +101,34 @@ $themes: $theme-ntu $theme-garden $theme-beach;
 }
 .intro {
 	font-size: 1.2em;
+	text-align: center;
+
 }
 .introHeader {
+	text-align: center;
 	font-size: 2em;
 	color: blue;
+	height: 50%;
+
+}
+/*.introHeader::before {
+	content: '';
+	width: 0px;
+	height: 100%;
+	display: inline-block;
+    vertical-align: middle;
+}*/
+%himher {
+	background-size: 50%;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: center center;
+}
+.introHeaderChiao {
+	background-image: url("ui/images/intro-him.png");
+	@extend %himher;
+}
+.introHeaderLin {
+	background-image: url("ui/images/intro-her.png");
+	@extend %himher;
 }

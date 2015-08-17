@@ -36,11 +36,9 @@ $(function() {
 		path = path.replace(/aboutUs(\d)-hover.jpg/, "aboutUs"+num+"-hover.jpg");
 		$('#aboutUsImgHover').attr("src", path);
 	};
-	var onChangeTheme = function(theme) {
-		var imgRootPath = "ui/images/{THEME}/aboutUs{VERSION}.jpg";
-		removeBodyClass();
-		$('body').addClass(theme);
-		var path = imgRootPath.replace("{THEME}", theme);
+	var onChangeAboutUsImg = function(imgRootPath, theme) {
+		var filename = "aboutUs{VERSION}.jpg";
+		var path = imgRootPath+filename;
 		path = path.replace("{VERSION}", "1");
 		$('#aboutUsImg').attr("src", path);
 		$('#aboutUsImg').one("load", function() {
@@ -50,10 +48,24 @@ $(function() {
 				$(this).load();
 			}
 		});
-		path = imgRootPath.replace("{THEME}", theme);
+		path = imgRootPath+filename;
 		path = path.replace("{VERSION}", "1-hover");
 		$('#aboutUsImgHover').attr("src", path);
 		addBtnRow(theme);
+	};
+	var onChangeWhenWhereImg = function(imgRootPath) {
+		var filename = "transportation.jpg";
+		var path = imgRootPath + filename;
+		var id = 'whenwhereImg';
+		$('#'+id).attr("src", path);
+	};
+	var onChangeTheme = function(theme) {
+		var imgRootPath = "ui/images/{THEME}/".replace("{THEME}", theme);
+		removeBodyClass();
+		$('body').addClass(theme);
+		onChangeAboutUsImg(imgRootPath, theme);
+		onChangeWhenWhereImg(imgRootPath, theme);
+		
 	};
 	
 	$.each(themes, function(key) {
@@ -95,6 +107,7 @@ $(function() {
 		$('#aboutUsImg').stop().animate({opacity:1}, fadeTime);
 	});
 /* when and where */
+	
 /* rsvp */
 	
 	

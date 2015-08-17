@@ -14,11 +14,14 @@ $themes: $theme-ntu $theme-garden $theme-beach;
 }
 
 @each $theme in $themes {
-	.#{$theme} .home {
-		background-image: url("ui/images/"+$theme+"/home-mobile.jpg");
-		background-repeat: no-repeat;
-		background-position: center center;
+	.#{$theme} {
+		.home {
+			background-image: url("ui/images/"+$theme+"/home-mobile.jpg");
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
 	}
+
 }
 
 @media (min-width: 991px) {
@@ -56,6 +59,9 @@ $themes: $theme-ntu $theme-garden $theme-beach;
 }
 .img-abs {
 	position: absolute;
+}
+#aboutUsImgContainer {
+	padding: 0px;
 }
 .about-us {
 	height: 100%;
@@ -100,7 +106,7 @@ $themes: $theme-ntu $theme-garden $theme-beach;
 	margin-left: 20px;
 }
 .intro {
-	font-size: 1.2em;
+	font-size: 1.1em;
 	text-align: center;
 
 }
@@ -131,4 +137,7 @@ $themes: $theme-ntu $theme-garden $theme-beach;
 .introHeaderLin {
 	background-image: url("ui/images/intro-her.png");
 	@extend %himher;
+}
+#whenwhereImg {
+	width: 100%;
 }

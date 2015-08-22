@@ -2,35 +2,33 @@ $theme-ntu: NTU;
 $theme-garden: Garden;
 $theme-beach: Beach;
 $themes: $theme-ntu $theme-garden $theme-beach;
-
 .navbar .navbar-nav {
-  display: inline-block;
-  float: none;
-  vertical-align: top;
+    display: inline-block;
+    float: none;
+    vertical-align: top;
 }
 
 .navbar .navbar-collapse {
-  text-align: center;
+    text-align: center;
 }
 
 @each $theme in $themes {
-	.#{$theme} {
-		.home {
-			background-image: url("ui/images/"+$theme+"/home-mobile.jpg");
-			background-repeat: no-repeat;
-			background-position: center center;
-		}
-	}
-
+    .#{$theme} {
+        .home {
+            background-image: url("ui/images/"+$theme+"/home-mobile.jpg");
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
 }
 
 @media (min-width: 991px) {
     @each $theme in $themes {
-    	.#{$theme} .home {
-    		background-image: url("ui/images/"+$theme+"/home.png");
-    		background-repeat: no-repeat;
-    		background-position: center center;
-    	}
+        .#{$theme} .home {
+            background-image: url("ui/images/"+$theme+"/home.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
     }
 }
 
@@ -43,80 +41,136 @@ $themes: $theme-ntu $theme-garden $theme-beach;
     height: 100%;
 }
 
-#introChiao, #introLin {
-	height: 50%;
-}
-.theme-btn {
-	position:absolute;
-	right: 40px;
-	line-height: 50px;
+#introChiao,
+#introLin {
+    height: 50%;
 }
 
+.theme-btn-wrap {
+    position: absolute;
+    right: 40px;
+    line-height: 50px;
+    .theme-btn {
+        border: none;
+        background-color: transparent;
+        padding: 0px;
+    	outline: none;
+    }
+}
+
+%theme-btn {
+    margin: 0px 10px;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+    vertical-align: middle;
+    fill: #797979;
+    width: 20px;
+    height: 20px;
+}
+
+#NTU svg {
+    @extend %theme-btn;
+}
+
+#NTU:hover svg {
+    fill: #DE873A;
+}
+
+#NTU.btn-checked svg{
+    fill: #A12F35;
+}
+#Beach svg {
+    @extend %theme-btn;
+}
+#Beach:hover svg {
+    fill: #00A3D3;
+}
+#Beach.btn-checked svg{
+    fill: #007790;
+}
+#Garden svg {
+    @extend %theme-btn;
+}
+#Garden:hover svg {
+    fill: #9AC07E;
+}
+#Garden.btn-checked svg{
+    fill: #608641;
+}
 #home {
     display: block;
     position: absolute;
     top: 0px;
 }
+
 .img-abs {
-	position: absolute;
+    position: absolute;
 }
+
 #aboutUsImgContainer {
-	padding: 0px;
+    padding: 0px;
 }
+
 .about-us {
-	height: 100%;
-	width: 100%;
-	background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
 }
+
 .about-us-hover {
-	height: 100%;
-	width: 100%;
-	background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
 }
+
 #btnRow {
-	bottom: 10px;
-	position: absolute;
-	background-color: rgba(255, 255, 255, 0.5);
-	width: 100%;
-	padding: 0px 5px;
-	.img-btn {
-		display: inline-block;
-		a {
-			cursor: pointer;
-			background-color: white;
-			width: 10px;
-		    height: 10px;
-		    display: block;
-		    margin: 0px 5px;
-		    border-radius: 20px;
-		}
-		/*a:before {
+    bottom: 10px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    padding: 0px 5px;
+    .img-btn {
+        display: inline-block;
+        a {
+            cursor: pointer;
+            background-color: white;
+            width: 10px;
+            height: 10px;
+            display: block;
+            margin: 0px 5px;
+            border-radius: 20px;
+        }
+        /*a:before {
 			position:absolute;
 		    content: " ";
 		    border-radius: 20px;
 		    box-shadow: inset 0 1px 2px rgba(0,0,0,0.2);
 		}*/
-		a:hover {
-			background-color: #691917;
-		}
-	}
-
+        a:hover {
+            background-color: #691917;
+        }
+    }
 }
+
 #aboutUsTextContainer {
-	margin-left: 20px;
+    margin-left: 20px;
 }
+
 .intro {
-	font-size: 1.1em;
-	text-align: center;
-
+    font-size: 1.1em;
+    text-align: center;
 }
+
 .introHeader {
-	text-align: center;
-	font-size: 2em;
-	color: blue;
-	height: 50%;
-
+    text-align: center;
+    font-size: 2em;
+    color: blue;
+    height: 50%;
 }
+
+
 /*.introHeader::before {
 	content: '';
 	width: 0px;
@@ -124,31 +178,38 @@ $themes: $theme-ntu $theme-garden $theme-beach;
 	display: inline-block;
     vertical-align: middle;
 }*/
+
 %himher {
-	background-size: 50%;
+    background-size: 50%;
     background-repeat: no-repeat;
     height: 100%;
     background-position: center center;
 }
+
 .introHeaderChiao {
-	background-image: url("ui/images/intro-him.png");
-	@extend %himher;
+    background-image: url("ui/images/intro-him.png");
+    @extend %himher;
 }
+
 .introHeaderLin {
-	background-image: url("ui/images/intro-her.png");
-	@extend %himher;
+    background-image: url("ui/images/intro-her.png");
+    @extend %himher;
 }
+
 #whenwhereImg {
-	width: 100%;
+    width: 100%;
 }
+
 .map-info {
-	font-size: 1.5em;
+    font-size: 1.5em;
     line-height: 1.7em;
     padding-top: 20px;
 }
+
 .address-row {
-	margin-bottom: 30px;
+    margin-bottom: 30px;
 }
-.taipei img{
-	width: 100%;
+
+.taipei img {
+    width: 100%;
 }

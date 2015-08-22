@@ -16,10 +16,11 @@ $(function() {
 		aboutUsNum: 1
 	}};
 	var defaultTheme = "NTU";
-	var removeBodyClass = function() {
-		$('body').removeClass('NTU');
-		$('body').removeClass('Garden');
-		$('body').removeClass('Beach');
+	var resetAllClass = function() {
+		$.each(themes, function(key) {
+			$('body').removeClass(key);
+			$('#'+key).removeClass('btn-checked');
+		});
 	};
 	var onChangeImg = function(num) {
 		var path = $('#aboutUsImg').attr('src');
@@ -61,10 +62,11 @@ $(function() {
 	};
 	var onChangeTheme = function(theme) {
 		var imgRootPath = "ui/images/{THEME}/".replace("{THEME}", theme);
-		removeBodyClass();
+		resetAllClass();
 		$('body').addClass(theme);
 		onChangeAboutUsImg(imgRootPath, theme);
 		onChangeWhenWhereImg(imgRootPath, theme);
+		$('#'+theme).addClass("btn-checked");
 		
 	};
 	

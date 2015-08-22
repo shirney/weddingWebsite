@@ -1,5 +1,5 @@
 $imgHeight: 400px;
-$imgWidth: $imgHeight * 1920/1020; 
+$imgWidth: $imgHeight * 3/2; 
 
 .jcarousel-wrapper {
     margin: 20px auto;
@@ -54,8 +54,8 @@ $imgWidth: $imgHeight * 1920/1020;
 
 /** Carousel Controls **/
 
-.jcarousel-control-prev,
-.jcarousel-control-next {
+a.jcarousel-control-prev,
+a.jcarousel-control-next {
     position: absolute;
     top: 200px;
     width: 30px;
@@ -109,6 +109,7 @@ $imgWidth: $imgHeight * 1920/1020;
     line-height: 14px;
     min-width: 14px;
     
+    border: solid 1px #4E443C;
     background: #fff;
     color: #4E443C;
     border-radius: 14px;

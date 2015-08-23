@@ -80,6 +80,7 @@ $(function() {
 	$('#introChiao').html(introChiao);
 	$('#introLin').html(introLin);
 	var setAboutUsHeight = function(){
+		console.log("height");
 		$('#aboutUsImgContainer').height($('#aboutUsImg').height());
 		$('#aboutUsTextWrapChiao').height($('#aboutUsImg').height());
 		$('#aboutUsTextWrapLin').height($('#aboutUsImg').height());
@@ -111,8 +112,11 @@ $(function() {
 /* when and where */
 	
 /* rsvp */
-	
-	
+	// $('#logout').on('click', function(){
+	// 	FB.api('/me/permission','delete', function(response) {
+	// 		console.log(response);
+	// 	});
+	// })
 /* overall */
 	setAboutUsHeight();
 	$(window).on('resize', function() {

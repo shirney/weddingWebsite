@@ -170,7 +170,6 @@ $themes: $theme-ntu $theme-garden $theme-beach;
     height: 50%;
 }
 
-
 /*.introHeader::before {
 	content: '';
 	width: 0px;
@@ -210,6 +209,17 @@ $themes: $theme-ntu $theme-garden $theme-beach;
     margin-bottom: 30px;
 }
 
-.taipei img {
-    width: 100%;
+.taipei img{
+	width: 100%;
+
 }
+#fbLoginCover {
+	opacity: 0.9;
+	position:relative; 
+	top:0px;
+
+}
+.form-header {
+	text-align: center;
+}
+

@@ -2,6 +2,13 @@ $theme-ntu: NTU;
 $theme-garden: Garden;
 $theme-beach: Beach;
 $themes: $theme-ntu $theme-garden $theme-beach;
+$NTU-hover: #DE873A;
+$NTU-checked: #A12F35;
+$Garden-hover: #9AC07E;
+$Garden-checked: #608641;
+$Beach-hover: #00A3D3;
+$Beach-checked: #007790;
+
 .navbar .navbar-nav {
     display: inline-block;
     float: none;
@@ -75,29 +82,29 @@ $themes: $theme-ntu $theme-garden $theme-beach;
 }
 
 #NTU:hover svg {
-    fill: #DE873A;
+    fill: $NTU-hover;
 }
 
 #NTU.btn-checked svg{
-    fill: #A12F35;
+    fill: $NTU-checked;
 }
 #Beach svg {
     @extend %theme-btn;
 }
 #Beach:hover svg {
-    fill: #00A3D3;
+    fill: $Beach-hover;
 }
 #Beach.btn-checked svg{
-    fill: #007790;
+    fill: $Beach-checked;
 }
 #Garden svg {
     @extend %theme-btn;
 }
 #Garden:hover svg {
-    fill: #9AC07E;
+    fill: $Garden-hover;
 }
 #Garden.btn-checked svg{
-    fill: #608641;
+    fill: $Garden-checked;
 }
 #home {
     display: block;
@@ -221,5 +228,67 @@ $themes: $theme-ntu $theme-garden $theme-beach;
 }
 .form-header {
 	text-align: center;
+	font-size: 3em;
 }
-
+.form-field span{
+	height: 50px;
+    display: inline-block;
+    vertical-align: middle;
+}
+%man-svg {
+	width: 50px;
+	height: 50px;
+	background-size: 30px 30px;
+	background-repeat:no-repeat;
+	background-position: center center;
+}
+.man {
+	@extend %man-svg;
+	width: 50px;
+	text-align: center;
+}
+.man-filled {
+	color: #5CB85C;
+}
+.man-please {
+	background-image: url("ui/images/please.svg");
+}
+.man-grass-empty {
+	background-image: url("ui/images/grass.svg");
+}
+.man-steak-empty {
+	background-image: url("ui/images/steak.svg");
+}
+.man-steak-filled {
+	background-image: url("ui/images/steak-filled.svg");
+}
+.man-vegan-empty {
+	background-image: url("ui/images/vegan.svg");
+}
+.man-vegan-filled {
+	background-image: url("ui/images/vegan-filled.svg");
+}
+.man-child-empty {
+	background-image: url("ui/images/child.svg");
+}
+.man-child-filled {
+	background-image: url("ui/images/child-filled.svg");
+}
+#address-input {
+	resize: none;
+}
+#words {
+	resize: none;
+}
+#sorryMsg .sorryMsg-dialog {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	$dialogWidth: 300px;
+	$dialogHeight: 90px;
+	margin-left: -1 * $dialogWidth/2;
+	margin-top: -1 * $dialogHeight/2;
+	.modal-content {
+		padding: 20px 40px;
+	}
+}

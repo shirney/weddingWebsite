@@ -8,6 +8,7 @@ $Garden-hover: #9AC07E;
 $Garden-checked: #608641;
 $Beach-hover: #00A3D3;
 $Beach-checked: #007790;
+$control-color: $Garden-checked;
 
 .navbar .navbar-nav {
     display: inline-block;
@@ -291,4 +292,8 @@ $Beach-checked: #007790;
 	.modal-content {
 		padding: 20px 40px;
 	}
+}
+.bootstrap-switch-controller {
+	background-color: $control-color;
+	color: white;
 }

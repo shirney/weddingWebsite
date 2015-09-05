@@ -118,7 +118,7 @@ $(function() {
 	// })
 	$("[name='join']").bootstrapSwitch({
 		size: "small",
-		onColor: "success",
+		onColor: "controller",
 		offColor: "danger",
 		onText: "立馬輸入行事曆",
 		offText: "不要咧"
@@ -140,7 +140,7 @@ $(function() {
 	$('[name="vegiterian"]').rating();
 	$("[name='letter']").bootstrapSwitch({
 		size: "small",
-		onColor: "success",
+		onColor: "controller",
 		offColor: "danger",
 		onText: "拿個紀念",
 		offText: "救地球"

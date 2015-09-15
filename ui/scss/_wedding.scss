@@ -297,3 +297,14 @@ $control-color: $Garden-checked;
 	background-color: $control-color;
 	color: white;
 }
+#form-wrap {
+	overflow: hidden;
+	transition: height 1s;
+	height: 0px;
+}
+#button-wrap {
+	display: none;
+}
+#fb-desc {
+	text-align: center;
+}

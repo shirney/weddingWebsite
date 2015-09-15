@@ -208,14 +208,15 @@
     <!-- /.content-section-b -->
     <div class="content-section-a" name="rsvp" id="rsvp">
         <div class="container">
-            <div class="col-sm-12" id="fbLoginCover">
-                <fb:login-button id="loginButton" scope="public_profile,email" onlogin="checkLoginState();">
-                </fb:login-button>
-                <!--<input type='button' id="logout">Logout</input>-->
+            <div id="fb-desc" class="row">
+                <span>
+                登入報名喔！
+                </span>
             </div>
+            <div id="status"></div>
             <div class="row">
                 <div class="mb_share clearfix">
-                    <div class="button facebook slide_x">
+                    <div id="fb-btn" class="button facebook slide_x">
                         <div class="icon"></div>
                         <div class="slide">
                             <span>facebook</span>
@@ -228,75 +229,75 @@
                     </div>
                 </div>
             </div>
-            <div class="row ">
+            <div class="row" id="form-wrap">
                 <div class="col-lg-6 col-lg-offset-3 col-xs-12">
                     <p class="lead">
-                        <form class="form-horizontal">
+                        <form id="wedding-form" class="form-horizontal">
                             <div class="form-group">
-                                <label for="inputName" class="col-sm-4 control-label">你/妳是哪位？</label>
-                                <div class="col-sm-8">
-                                    <input class="form-control" id="inputName" placeholder="您的大名（收件人）">
+                                <label for="name" class="col-sm-4 col-xs-4 control-label">你/妳是哪位？</label>
+                                <div class="col-sm-8 col-xs-8">
+                                    <input class="form-control" id="name" name="name" placeholder="您的大名（收件人）">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="isComing" class="col-sm-4 control-label">會來參加嗎？</label>
-                                <div class="col-sm-8">
-                                    <input type="checkbox" name="join" checked>
+                                <label for="coming" class="col-sm-4 col-xs-4 control-label">會來參加嗎？</label>
+                                <div class="col-sm-8 col-xs-8">
+                                    <input type="checkbox" id="coming" name="coming" checked>
                                 </div>
                             </div>
                             <div class="form-group" id="man-steak">
                                 <div class="col-sm-offset-4 col-sm-8 form-field">
-                                    <input type="hidden" name="person" class="rating" data-filled="fa man man-steak-filled" data-empty="fa man man-steak-empty" />
+                                    <input type="hidden" name="adults" class="rating" data-filled="fa man man-steak-filled" data-empty="fa man man-steak-empty" />
                                     <label class="control-label">大人（葷）</label>
                                 </div>
                             </div>
                             <div class="form-group" id="man-vegan">
                                 <div class="col-sm-offset-4 col-sm-8 form-field">
-                                    <input type="hidden" name="person" class="rating" data-filled="fa man man-vegan-filled" data-empty="fa man man-vegan-empty" />
+                                    <input type="hidden" name="vegetarians" class="rating" data-filled="fa man man-vegan-filled" data-empty="fa man man-vegan-empty" />
                                     <label class="control-label">大人（素）</label>
                                 </div>
                             </div>
                             <div class="form-group" id="man-child">
                                 <div class="col-sm-offset-4 col-sm-8 form-field">
-                                    <input type="hidden" name="person" class="rating fa-fw" data-filled="fa man man-child-filled" data-empty="fa man-child-empty man" />
+                                    <input type="hidden" name="children" class="rating fa-fw" data-filled="fa man man-child-filled" data-empty="fa man-child-empty man" />
                                     <label class="control-label">屁孩（兒童椅）</label>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="needLetter" class="col-sm-4 control-label">需要紙本喜帖嗎？</label>
-                                <div class="col-sm-8">
-                                    <input type="checkbox" name="letter" checked>
+                                <label for="invitationType" class="col-sm-4 col-xs-4 control-label">需要紙本喜帖嗎？</label>
+                                <div class="col-sm-8 col-xs-8 ">
+                                    <input type="checkbox" name="invitationType" checked>
                                 </div>
                             </div>
-                            <div class="form-group" id="address">
-                                <label for="address-input" class="col-sm-4 control-label">地址？</label>
-                                <div class="col-sm-8">
-                                    <textarea resize="none" rows="2" class="form-control" id="address-input" placeholder="限鬼島"></textarea>
+                            <div class="form-group" id="address-wrap">
+                                <label for="address" class="col-sm-4 col-xs-4 control-label">地址？</label>
+                                <div class="col-sm-8 col-xs-8">
+                                    <textarea resize="none" rows="2" class="form-control" name="address" id="address" placeholder="限鬼島"></textarea>
                                 </div>
                             </div>
-                            <div class="form-group" id="mail-address" style="display:none">
-                                <label for="mail-address-input" class="col-sm-4 control-label">電子郵件？</label>
-                                <div class="col-sm-8">
-                                    <input class="form-control" id="mail-address-input" placeholder="不要喜帖請留白，就當你記住惹">
+                            <div class="form-group" id="email-address-wrap" style="display:none">
+                                <label for="email-address" class="col-sm-4 col-xs-4 control-label">電子郵件？</label>
+                                <div class="col-sm-8 col-xs-8">
+                                    <input class="form-control" name="email-address" id="email-address" placeholder="不要喜帖請留白，就當你記住惹">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="howmuch" class="col-sm-4 control-label">你/妳會包多少？</label>
-                                <div class="col-sm-8">
+                                <label for="howmuch" class="col-sm-4 col-xs-4 control-label">你/妳會包多少？</label>
+                                <div class="col-sm-8 col-xs-8">
                                     <input class="form-control" id="howmuch" placeholder="太少強制不參加">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="words" class="col-sm-4 control-label">想對我們說什麼呢？</label>
-                                <div class="col-sm-8">
-                                    <textarea rows="5" class="form-control" id="words" placeholder="新娘婚紗照好瘦"></textarea>
+                                <label for="words" class="col-sm-4 col-xs-4 control-label">想對我們說什麼呢？</label>
+                                <div class="col-sm-8 col-xs-8">
+                                    <textarea rows="5" class="form-control" id="words" name="comment" placeholder="新娘婚紗照好瘦"></textarea>
                                 </div>
                             </div>
                         </form>
                     </p>
                 </div>
             </div>
-            <div class="row button-wrap">
+            <div class="row button-wrap" id="button-wrap">
                 <button id="submit">Submit</button>
             </div>
         </div>

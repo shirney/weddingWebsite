@@ -2,16 +2,19 @@ $("#reset").hide();
 
 //Submit
 $("#submit").click(function() {
-  $("#submit").addClass("pro").html("");
-  //Replace with your server function
-  setTimeout(function() { 
-    $('#submit').addClass("finish");
-    $("#reset").fadeIn();
-  }, 2000);
+    $("#submit").addClass("pro").html("");
+    $.post("guest",$("#wedding-form").serialize()).done(function() {
+        $('#submit').addClass("finish");
+        $("#reset").fadeIn();
+    });
 });
 
 //Reset
 $("#reset").click(function() {
-  $("#submit").removeClass("pro").removeClass("finish").html("Submit");
-  $("#reset").fadeOut();
+    $("#submit").removeClass("pro").removeClass("finish").html("Submit");
+    $("#reset").fadeOut();
+});
+
+$("#fb-btn").click(function() {
+    FB.login(statusChangeCallback);
 });

@@ -1,3 +1,4 @@
+// @codekit-prepend "fb.js";
 // @codekit-prepend "utils.js";
 // @codekit-prepend "bootstrap-rating.js";
 // @codekit-prepend "button.js";

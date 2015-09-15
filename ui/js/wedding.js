@@ -116,7 +116,7 @@ $(function() {
 	// 		console.log(response);
 	// 	});
 	// })
-	$("[name='join']").bootstrapSwitch({
+	$("[name='coming']").bootstrapSwitch({
 		size: "small",
 		onColor: "controller",
 		offColor: "danger",
@@ -124,8 +124,8 @@ $(function() {
 		offText: "不要咧"
 
 	});
-	$('input[name="join"]').on('switchChange.bootstrapSwitch', function(event, state) {
-		var stat = ["man-steak", "man-vegan", "man-child"];
+	$('input[name="comming"]').on('switchChange.bootstrapSwitch', function(event, state) {
+		var stat = ["adults", "vegetarians", "children"];
 		if (state) {
 			stat.forEach(function(item) {
 				$('#'+item).show();
@@ -136,22 +136,22 @@ $(function() {
 			});
 		}
 	});
-	$('[name="person"]').rating();
-	$('[name="vegiterian"]').rating();
-	$("[name='letter']").bootstrapSwitch({
+	$('[name="adults"]').rating();
+	$('[name="vegetarians"]').rating();
+	$("[name='invitationType']").bootstrapSwitch({
 		size: "small",
 		onColor: "controller",
 		offColor: "danger",
 		onText: "拿個紀念",
 		offText: "救地球"
 	});
-	$('input[name="letter"]').on('switchChange.bootstrapSwitch', function(event, state) {
+	$('input[name="invitationType"]').on('switchChange.bootstrapSwitch', function(event, state) {
 		if (state) {
-			$("#address").show();
-			$("#mail-address").hide();
+			$("#address-wrap").show();
+			$("#email-address-wrap").hide();
 		} else {
-			$("#address").hide();
-			$("#mail-address").show();
+			$("#address-wrap").hide();
+			$("#email-address-wrap").show();
 		}
 	});
 /* form */

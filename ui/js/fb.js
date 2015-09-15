@@ -6,12 +6,13 @@ function statusChangeCallback(response) {
 	// Full docs on the response object can be found in the documentation
 	// for FB.getLoginStatus().
 	if (response.status === 'connected') {
+		var auth = response.authResponse;
 		$(".mb_share").hide();
 		$("#fb-desc").hide();
 		$("#form-wrap").height("auto");
 		$("#button-wrap").show();
-		$("accessToken").val(response.accessToken);
-		$("userID").val(response.userID);
+		$("#accessToken").val(auth.accessToken);
+		$("#userID").val(auth.userID);
 		testAPI();
 	} else if (response.status === 'not_authorized') {
 		// The person is logged into Facebook, but not your app.

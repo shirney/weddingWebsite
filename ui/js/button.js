@@ -3,9 +3,21 @@ $("#reset").hide();
 //Submit
 $("#submit").click(function() {
     $("#submit").addClass("pro").html("");
-    $.post("https://localhost:9000/guest",$("#wedding-form").serialize()).done(function() {
-        $('#submit').addClass("finish");
-        $("#reset").fadeIn();
+    $.ajax({
+        type: "POST",
+        url: "https://localhost:9000/guest",
+        data: $("#wedding-form").serialize(),
+        dataType: "json",
+        beforeSend: function(xhr) { 
+            xhr.setRequestHeader(
+                "Authorization", 
+                "Basic " + btoa($("#userID").val() + ":" + $("#accessToken").val())
+            );
+        },
+        success: function() {
+            $('#submit').addClass("finish");
+            $("#reset").fadeIn();
+        }
     });
 });
 

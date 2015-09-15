@@ -10,6 +10,8 @@ function statusChangeCallback(response) {
 		$("#fb-desc").hide();
 		$("#form-wrap").height("auto");
 		$("#button-wrap").show();
+		$("accessToken").val(response.accessToken);
+		$("userID").val(response.userID);
 		testAPI();
 	} else if (response.status === 'not_authorized') {
 		// The person is logged into Facebook, but not your app.

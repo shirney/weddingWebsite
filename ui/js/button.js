@@ -3,7 +3,7 @@ $("#reset").hide();
 //Submit
 $("#submit").click(function() {
     $("#submit").addClass("pro").html("");
-    $.post("guest",$("#wedding-form").serialize()).done(function() {
+    $.post("https://localhost:9000/guest",$("#wedding-form").serialize()).done(function() {
         $('#submit').addClass("finish");
         $("#reset").fadeIn();
     });

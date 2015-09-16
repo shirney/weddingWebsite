@@ -210,10 +210,8 @@
         <div class="container">
             <div id="fb-desc" class="row">
                 <span>
-                登入報名喔！
                 </span>
             </div>
-            <div id="status"></div>
             <div class="row">
                 <div class="mb_share clearfix">
                     <div id="fb-btn" class="button facebook slide_x">
@@ -293,10 +291,6 @@
                                     <textarea rows="5" class="form-control" id="words" name="comment" placeholder="新娘婚紗照好瘦"></textarea>
                                 </div>
                             </div>
-                            <div class="form-group" style="display:none">
-                                <input name="accessToken" id="accessToken">
-                                <input name="userID" id="userID">
-                            </div>
                         </form>
                     </p>
                 </div>
@@ -309,6 +303,10 @@
     <!-- /.container -->
     </div>
     <div class="content-section-b" name="gallery" id="gallery">
+        <div id="gallery-title" class="row">
+            <span>
+            </span>
+        </div>
         <div class="connected-carousels">
             <div class="stage">
                 <div class="carousel carousel-stage">
@@ -437,8 +435,7 @@
     </footer>
     <div class="modal fade" tabindex="-1" id="sorryMsg">
         <div class="sorryMsg-dialog modal-dialog modal-sm">
-            <div class="modal-content">
-                可以來參加，就都要流淚了，怎麼可能還問這麼失禮的問題。
+            <div class="modal-content" id="sorryMsg-text">
             </div>
         </div>
     </div>

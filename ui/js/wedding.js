@@ -160,11 +160,21 @@ $(function() {
 		showMsgBox(howmuchNote);
 	});
 	//Submit
-	var getParams = function() {
+	window.getParams = function() {
+		var invitationType;
+		if ($("[name='invitationType']").bootstrapSwitch('state') || false) {
+			invitationType = "mail";
+		} else {
+			if (jQuery.isEmptyObject($('#emailAddress').val())) {
+				invitationType = "none";
+			} else {
+				invitationType = "email";
+			}
+		}
 		var params = {
 			name: jQuery.isEmptyObject($('#name').val()) ? "無名氏" : $('#name').val(),
 			comming: $('input[name="coming"]').bootstrapSwitch('state') || false,
-			invitationType: $("[name='invitationType']").bootstrapSwitch('state') || false,
+			invitationType: invitationType,
 			adult: jQuery.isEmptyObject($('[name="adults"]').val()) ? 1 : parseInt($('[name="adults"]').val()),
 			vegetarians: jQuery.isEmptyObject($('[name="vegetarians"]').val()) ? 0 : parseInt($('[name="vegetarians"]').val()),
 			children: jQuery.isEmptyObject($('[name="children"]').val()) ? 0 : parseInt($('[name="children"]').val()),
@@ -174,23 +184,30 @@ $(function() {
 		};
 		return params;
 	};
-	var setParams = function(obj) {
+	window.setParams = function(obj) {
 		$('#name').val(obj.name);
 		$('input[name="coming"]').bootstrapSwitch('state', obj.coming || false);
-		$('input[name="invitationType"]').bootstrapSwitch('state', obj.invitationType || false);
+		if ("none" === obj.invitationType) {
+			$('input[name="invitationType"]').bootstrapSwitch('state', false);
+			$('#emailAddress').val("");
+		} else if ("mail" === obj.invitationType) {
+			$('input[name="invitationType"]').bootstrapSwitch('state', true);
+			$('#address').val(obj.address || "");
+		} else if ("email" === obj.invitationType) {
+			$('input[name="invitationType"]').bootstrapSwitch('state', false);
+			$('#emailAddress').val(obj.emailAddress || "");
+		}
 		$('[name="adults"]').rating('rate', obj.adults || 0);
 		$('[name="vegetarians"]').rating('rate', obj.vegetarians || 0);
 		$('[name="children"]').rating('rate', obj.children || 0);
-		$('#address').val(obj.address || "");
-		$('#emailAddress').val(obj.emailAddress || "");
 		$('#comment').val(obj.comment || "");
 	};
 	$("#submit").click(function() {
 		$("#submit").addClass("pro").html("");
 		$.ajax({
 			type: "POST",
-			url: "https://localhost:5757/guest",
-			data: getParams(),
+			url: "guest",
+			data: JSON.stringify(getParams()),
 			dataType: "json",
 			timeout: 10000,
 			beforeSend: function(xhr) { 
@@ -224,12 +241,14 @@ $(function() {
 	$("#gallery-title").html(galleryTitle);
 /* overall */
 	setAboutUsHeight();
-	var showMsgBox = function(message) {
+	window.showMsgBox = function(message) {
 		$("#sorryMsg-text").html(message);
 		$("#sorryMsg").modal('show');
 	}
 	$(window).on('resize', function() {
 		setAboutUsHeight();
 	});
-
+	$(function() {
+		$("img.lazy").lazyload();
+}	);
 });

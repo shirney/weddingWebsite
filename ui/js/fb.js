@@ -10,6 +10,34 @@ function statusChangeCallback(response) {
 		$("#button-wrap").show();
 		window.accessToken = auth.accessToken;
 		window.userID = auth.userID;
+		/*$.ajax({
+			type: "GET",
+			url: "guest",
+			//data: JSON.stringify(getParams()),
+			dataType: "json",
+			timeout: 10000,
+			beforeSend: function(xhr) {
+				xhr.setRequestHeader(
+					"Authorization",
+					"Basic " + btoa(window.userID + ":" + window.accessToken)
+				);
+				xhr.setRequestHeader(
+					"Content-Type",
+					"application/json"
+				);
+			},
+			success: function(resp) {
+				var obj = jQuery.parseJSON(resp.responseText);
+				if (jQuery.isEmptyObject(obj)) {
+					getFBData();
+				} else {
+					setParams(obj);
+				}
+			},
+			error: function() {
+				showMsgBox(submitFailed);
+			}
+		});*/
 		getFBData();
 	} else if (response.status === 'not_authorized') {
 		// The person is logged into Facebook, but not your app.

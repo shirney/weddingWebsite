@@ -10,7 +10,7 @@ function statusChangeCallback(response) {
 		$("#button-wrap").show();
 		window.accessToken = auth.accessToken;
 		window.userID = auth.userID;
-		/*$.ajax({
+		$.ajax({
 			type: "GET",
 			url: "guest",
 			//data: JSON.stringify(getParams()),
@@ -27,18 +27,21 @@ function statusChangeCallback(response) {
 				);
 			},
 			success: function(resp) {
-				var obj = jQuery.parseJSON(resp.responseText);
-				if (jQuery.isEmptyObject(obj)) {
+				if (jQuery.isEmptyObject(resp)) {
+					getFBData();
+					return;
+				}
+				if (jQuery.isEmptyObject(resp)) {
 					getFBData();
 				} else {
-					setParams(obj);
+					setParams(resp);
 				}
 			},
 			error: function() {
-				showMsgBox(submitFailed);
+				console.log(arguments);
 			}
-		});*/
-		getFBData();
+		});
+		//getFBData();
 	} else if (response.status === 'not_authorized') {
 		// The person is logged into Facebook, but not your app.
 		showMsgBox(loginAppFailed);

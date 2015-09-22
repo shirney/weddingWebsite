@@ -29,3 +29,4 @@ window.loginTitleSuccess = '哇嗚！歡迎你'
 window.submitFailed = '悲劇耶～看到這個應該真的有bug，別慌張，你可以印出來寄封信給我們來報名。'
 ;
 window.galleryTitle = '假掰照集錦'
+;

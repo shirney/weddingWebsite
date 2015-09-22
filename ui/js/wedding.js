@@ -172,15 +172,15 @@ $(function() {
 			}
 		}
 		var params = {
-			name: jQuery.isEmptyObject($('#name').val()) ? "無名氏" : $('#name').val(),
-			comming: $('input[name="coming"]').bootstrapSwitch('state') || false,
+			name: jQuery.isEmptyObject($('#name').val()) ? "" : $('#name').val(),
+			coming: $('input[name="coming"]').bootstrapSwitch('state') || false,
 			invitationType: invitationType,
-			adult: jQuery.isEmptyObject($('[name="adults"]').val()) ? 1 : parseInt($('[name="adults"]').val()),
+			adults: jQuery.isEmptyObject($('[name="adults"]').val()) ? 1 : parseInt($('[name="adults"]').val()),
 			vegetarians: jQuery.isEmptyObject($('[name="vegetarians"]').val()) ? 0 : parseInt($('[name="vegetarians"]').val()),
 			children: jQuery.isEmptyObject($('[name="children"]').val()) ? 0 : parseInt($('[name="children"]').val()),
-			address: jQuery.isEmptyObject($('#address').val()) ? "無家可歸" : $('#address').val(),
-			emailAddress: jQuery.isEmptyObject($('#emailAddress').val()) ? "email都沒有怎麼辦" : $('#emailAddress').val(),
-			comment: jQuery.isEmptyObject($('#comment').val()) ? "無話可說" : $('#comment').val()
+			address: jQuery.isEmptyObject($('#address').val()) ? "" : $('#address').val(),
+			emailAddress: jQuery.isEmptyObject($('#emailAddress').val()) ? "" : $('#emailAddress').val(),
+			comment: jQuery.isEmptyObject($('#comment').val()) ? "" : $('#comment').val()
 		};
 		return params;
 	};
@@ -249,6 +249,14 @@ $(function() {
 		setAboutUsHeight();
 	});
 	$(function() {
-		$("img.lazy").lazyload();
+		console.log("lazyload");
+		$("img.lazy").lazyload({
+			event: "lazyloadman"
+		});
 }	);
+	$(window).bind("load", function() {
+    var timeout = setTimeout(function() {
+        $("img.lazy").trigger("lazyloadman")
+    }, 5000);
+});
 });

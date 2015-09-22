@@ -116,7 +116,7 @@ $(function() {
 	// 		console.log(response);
 	// 	});
 	// })
-	$("[name='coming']").bootstrapSwitch({
+	$("[name='isComing']").bootstrapSwitch({
 		size: "small",
 		onColor: "controller",
 		offColor: "danger",
@@ -124,7 +124,7 @@ $(function() {
 		offText: "不要咧"
 
 	});
-	$('input[name="comming"]').on('switchChange.bootstrapSwitch', function(event, state) {
+	$('input[name="isComing"]').on('switchChange.bootstrapSwitch', function(event, state) {
 		var stat = ["adults", "vegetarians", "children"];
 		if (state) {
 			stat.forEach(function(item) {
@@ -173,7 +173,7 @@ $(function() {
 		}
 		var params = {
 			name: jQuery.isEmptyObject($('#name').val()) ? "" : $('#name').val(),
-			coming: $('input[name="coming"]').bootstrapSwitch('state') || false,
+			isComing: $('input[name="isComing"]').bootstrapSwitch('state') || false,
 			invitationType: invitationType,
 			adults: jQuery.isEmptyObject($('[name="adults"]').val()) ? 1 : parseInt($('[name="adults"]').val()),
 			vegetarians: jQuery.isEmptyObject($('[name="vegetarians"]').val()) ? 0 : parseInt($('[name="vegetarians"]').val()),
@@ -186,7 +186,7 @@ $(function() {
 	};
 	window.setParams = function(obj) {
 		$('#name').val(obj.name);
-		$('input[name="coming"]').bootstrapSwitch('state', obj.coming || false);
+		$('input[name="isComing"]').bootstrapSwitch('state', obj.isComing || false);
 		if ("none" === obj.invitationType) {
 			$('input[name="invitationType"]').bootstrapSwitch('state', false);
 			$('#emailAddress').val("");

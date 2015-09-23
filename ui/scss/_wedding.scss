@@ -9,6 +9,7 @@ $Garden-checked: #608641;
 $Beach-hover: #00A3D3;
 $Beach-checked: #007790;
 $control-color: $Garden-checked;
+$rating-color: #797979;
 
 .navbar .navbar-nav {
     display: inline-block;
@@ -243,6 +244,16 @@ $control-color: $Garden-checked;
 	background-repeat:no-repeat;
 	background-position: center center;
 }
+%clear-svg {
+    -webkit-mask:  url("ui/images/clear.svg") no-repeat 50% 50%;
+    mask: url("ui/images/clear.svg") no-repeat 50% 50%;
+    width: 30px;
+    height: 50px;
+    border: none;
+    float: right;
+    background-color: $rating-color;
+}
+
 .man {
 	@extend %man-svg;
 	width: 50px;
@@ -251,11 +262,19 @@ $control-color: $Garden-checked;
 .man-filled {
 	color: #5CB85C;
 }
-.man-please {
-	background-image: url("ui/images/please.svg");
-}
-.man-grass-empty {
-	background-image: url("ui/images/grass.svg");
+#man-steak {
+    #clear-man {
+        @extend %clear-svg;
+        transition: opacity 300ms;
+        opacity: 0;
+    }
+    &:hover {
+        #clear-man {
+            opacity: 1;
+            transition: opacity 300ms;
+            background-color: $NTU-checked;
+        }
+    }
 }
 .man-steak-empty {
 	background-image: url("ui/images/steak.svg");
@@ -278,7 +297,7 @@ $control-color: $Garden-checked;
 #address-input {
 	resize: none;
 }
-#words {
+#comment {
 	resize: none;
 }
 #sorryMsg .sorryMsg-dialog {

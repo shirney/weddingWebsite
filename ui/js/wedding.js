@@ -237,6 +237,10 @@ $(function() {
 		$("#reset").fadeOut();
 	});
 	$("#reset").hide();
+
+	$("#clear-man").click(function() {
+		$('[name="adults"]').rating('rate', 0);
+	})
 /* gallery */
 	$("#gallery-title").html(galleryTitle);
 /* overall */

@@ -125,7 +125,7 @@ $(function() {
 
 	});
 	$('input[name="isComing"]').on('switchChange.bootstrapSwitch', function(event, state) {
-		var stat = ["adults", "vegetarians", "children"];
+		var stat = ["man-steak", "man-vegan", "man-child"];
 		if (state) {
 			stat.forEach(function(item) {
 				$('#'+item).show();

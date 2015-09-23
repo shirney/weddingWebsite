@@ -204,6 +204,7 @@ $(function() {
 	};
 	$("#submit").click(function() {
 		$("#submit").addClass("pro").html("");
+		debugger;
 		$.ajax({
 			type: "POST",
 			url: "guest",
@@ -231,15 +232,20 @@ $(function() {
 		});
 	});
 
-	//Reset
-	$("#reset").click(function() {
-		$("#submit").removeClass("pro").removeClass("finish").html("Submit");
-		$("#reset").fadeOut();
-	});
-	$("#reset").hide();
-
-	$("#clear-man").click(function() {
+	$("#clear-man").click(function(event) {
+		event.stopPropagation();
+		event.preventDefault();
 		$('[name="adults"]').rating('rate', 0);
+	})
+	$("#clear-child").click(function(event) {
+		event.stopPropagation();
+		event.preventDefault();
+		$('[name="children"]').rating('rate', 0);
+	})
+	$("#clear-vegan").click(function(event) {
+		event.stopPropagation();
+		event.preventDefault();
+		$('[name="vegetarians"]').rating('rate', 0);
 	})
 /* gallery */
 	$("#gallery-title").html(galleryTitle);
@@ -253,7 +259,6 @@ $(function() {
 		setAboutUsHeight();
 	});
 	$(function() {
-		console.log("lazyload");
 		$("img.lazy").lazyload({
 			event: "lazyloadman"
 		});

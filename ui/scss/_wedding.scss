@@ -251,7 +251,6 @@ $rating-color: #797979;
     height: 50px;
     border: none;
     float: right;
-    background-color: $rating-color;
 }
 
 .man {
@@ -270,31 +269,21 @@ $rating-color: #797979;
     }
     &:hover {
         .clear-btn {
+            background-color: $rating-color;
             opacity: 1;
             transition: opacity 300ms;
         }
     }
 }
-#man-steak {
-    &:hover {
-        #clear-man {
-            background-color: $NTU-checked;
-        }
-    }
+
+#man-steak #clear-man:hover {
+    background-color: $NTU-checked;
 }
-#man-vegan {
-    &:hover {
-        #clear-vegan {
-            background-color: $Garden-checked;
-        }
-    }
+#man-vegan #clear-vegan:hover {
+    background-color: $Garden-checked;
 }
-#man-child {
-    &:hover {
-        #clear-child {
-            background-color: #F4BFD9;
-        }
-    }
+#man-child #clear-child:hover {
+    background-color: #F4BFD9;
 }
 .man-steak-empty {
 	background-image: url("ui/images/steak.svg");

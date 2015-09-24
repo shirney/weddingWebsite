@@ -1,13 +1,15 @@
 $("#fb-btn").click(function() {
     FB.login(statusChangeCallback);
 });
+var showForm = function() {
+	$("#form-wrap").height("auto");
+	$("#button-wrap").show();
+};
 function statusChangeCallback(response) {
 	if (response.status === 'connected') {
 		var auth = response.authResponse;
 		$(".mb_share").hide();
 		$("#fb-desc").html(loginTitleSuccess);
-		$("#form-wrap").height("auto");
-		$("#button-wrap").show();
 		window.accessToken = auth.accessToken;
 		window.userID = auth.userID;
 		$.ajax({
@@ -35,6 +37,7 @@ function statusChangeCallback(response) {
 					getFBData();
 				} else {
 					setParams(resp);
+					showForm();
 				}
 			},
 			error: function() {
@@ -99,5 +102,6 @@ window.fbAsyncInit = function() {
 function getFBData() {
 	FB.api('/me?locale=zh_TW', function(response) {
 		$('#name').val(response.name);
+		showForm();
 	});
 }

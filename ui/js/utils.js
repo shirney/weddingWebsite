@@ -30,3 +30,5 @@ window.submitFailed = '悲劇耶～看到這個應該真的有bug，別慌張，
 ;
 window.galleryTitle = '假掰照集錦'
 ;
+window.successMsg = '我們12月19號中午見'
+;

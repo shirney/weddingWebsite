@@ -309,7 +309,7 @@ $rating-color: #797979;
 #comment {
 	resize: none;
 }
-#sorryMsg .sorryMsg-dialog {
+#sorryMsg .sorryMsg-dialog, #successMsg .successMsg-dialog {
 	position: absolute;
 	top: 50%;
 	left: 50%;

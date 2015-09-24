@@ -223,7 +223,7 @@ $(function() {
 			},
 			success: function() {
 				$('#submit').addClass("finish");
-				$("#reset").fadeIn();
+				showSuccessMsgBox(successMsg);
 			},
 			error: function() {
 				showMsgBox(submitFailed);
@@ -254,6 +254,13 @@ $(function() {
 	window.showMsgBox = function(message) {
 		$("#sorryMsg-text").html(message);
 		$("#sorryMsg").modal('show');
+	}
+	window.showSuccessMsgBox = function(message) {
+		$("#successMsg-text").html(message);
+		$('#successMsg').on('hidden.bs.modal', function (e) {
+  			$("#submit").removeClass("pro").removeClass("finish").html("Submit");
+		})
+		$("#successMsg").modal('show');
 	}
 	$(window).on('resize', function() {
 		setAboutUsHeight();

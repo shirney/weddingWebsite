@@ -9,7 +9,7 @@ $(function() {
 	});
 	var themes = {
 		"NTU": {
-		aboutUsNum: 3
+		aboutUsNum: 2
 	},	"Garden": {
 		aboutUsNum: 1
 	},	"Beach": {

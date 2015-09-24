@@ -30,5 +30,9 @@ window.submitFailed = '悲劇耶～看到這個應該真的有bug，別慌張，
 ;
 window.galleryTitle = '假掰照集錦'
 ;
-window.successMsg = '我們12月19號中午見'
+window.successMsg = '我們12月19號中午12:30世貿三三不見不散。'
+;
+window.thanksMsg = '好可惜呦！你的祝福我們收到了，關閉分頁之前請你聽首歌吧！' +
+	'<a href="https://www.youtube.com/watch?v=Ew4VvF0DPMc" target="_blank">以後別做朋友</a>' +
+	'(開玩笑的啦！)'
 ;

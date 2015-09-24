@@ -223,7 +223,11 @@ $(function() {
 			},
 			success: function() {
 				$('#submit').addClass("finish");
-				showSuccessMsgBox(successMsg);
+				if ($('input[name="isComing"]').bootstrapSwitch('state')) {
+					showSuccessMsgBox(successMsg);
+				} else {
+					showSuccessMsgBox(thanksMsg);
+				}
 			},
 			error: function() {
 				showMsgBox(submitFailed);

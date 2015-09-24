@@ -34,7 +34,7 @@ $rating-color: #797979;
 @media (min-width: 991px) {
     @each $theme in $themes {
         .#{$theme} .home {
-            background-image: url("ui/images/"+$theme+"/home.png");
+            background-image: url("ui/images/"+$theme+"/home.jpg");
             background-repeat: no-repeat;
             background-position: center center;
         }

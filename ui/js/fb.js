@@ -5,7 +5,7 @@ var showForm = function() {
 	$("#form-wrap").height("auto");
 	$("#button-wrap").show();
 };
-function statusChangeCallback(response) {
+function statusChangeCallback(response, isFirstTime) {
 	if (response.status === 'connected') {
 		var auth = response.authResponse;
 		$(".mb_share").hide();
@@ -45,10 +45,10 @@ function statusChangeCallback(response) {
 			}
 		});
 		//getFBData();
-	} else if (response.status === 'not_authorized') {
+	} else if (response.status === 'not_authorized' && !isFirstTime) {
 		// The person is logged into Facebook, but not your app.
 		showMsgBox(loginAppFailed);
-	} else {
+	} else if (!isFirstTime){
 		showMsgBox(loginFBFailed);
 	}
 }
@@ -84,7 +84,7 @@ window.fbAsyncInit = function() {
 	// These three cases are handled in the callback function.
 
 	FB.getLoginStatus(function(response) {
-		statusChangeCallback(response);
+		statusChangeCallback(response, true);
 	});
 
 };

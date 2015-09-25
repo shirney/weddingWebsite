@@ -113,7 +113,19 @@ $rating-color: #797979;
     position: absolute;
     top: 0px;
 }
-
+.img-center {
+    width: 100%;
+    height: 100%;
+}
+@media screen and (min-width: 390px) {
+    .img-center {
+        width: 390px;
+        left: 0px;
+        right: 0px;
+        margin: 0 auto;
+    }
+    // 如果使用者之視窗寬度 >= 1200px，將會再載入這裡的 CSS。
+}
 .img-abs {
     position: absolute;
 }
@@ -340,4 +352,12 @@ $rating-color: #797979;
 #gallery-title {
     text-align: center;
     font-size: 3em;
+}
+#gallery {
+    display: none;
+}
+@media screen and (min-width: 650px) {
+    #gallery {
+        display: block;
+    }
 }

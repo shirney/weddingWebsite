@@ -22,9 +22,15 @@ window.loginAppFailed = '怎麼辦？不能報名噎～發issue給我們之前�
 ;
 window.loginFBFailed = '怎麼辦？不能報名噎～發issue給我們之前，再按一下我們精美的按鈕FB如何？'
 ;
-window.loginTitle = '登入才可以報名喔！'
+window.loginTitle = '拜·託·登·入'
 ;
-window.loginTitleSuccess = '哇嗚！歡迎你'
+window.loginTitleSuccess = '囍筵'
+;
+window.steakText = '{0} 位大人（葷）'
+;
+window.veganText = '{0} 位大人（素）'
+;
+window.childrenText = '{0} 位屁孩（兒童椅）'
 ;
 window.submitFailed = '悲劇耶～看到這個應該真的有bug，別慌張，你可以印出來寄封信給我們來報名。'
 ;
@@ -36,3 +42,14 @@ window.thanksMsg = '好可惜呦！你的祝福我們收到了，關閉分頁之
 	'<a href="https://www.youtube.com/watch?v=Ew4VvF0DPMc" target="_blank">以後別做朋友</a>' +
 	'(開玩笑的啦！)'
 ;
+if (!String.prototype.format) {
+  String.prototype.format = function() {
+    var args = arguments;
+    return this.replace(/{(\d+)}/g, function(match, number) { 
+      return typeof args[number] != 'undefined'
+        ? args[number]
+        : match
+      ;
+    });
+  };
+}

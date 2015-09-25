@@ -1,6 +1,12 @@
 $("#fb-btn").click(function() {
     FB.login(statusChangeCallback);
 });
+var hideForm = function() {
+	$("#form-wrap").height(0);
+	$("#button-wrap").hide();
+	$(".mb_share").show();
+	$("#fb-desc").html(loginTitle);
+}
 var showForm = function() {
 	$("#form-wrap").height("auto");
 	$("#button-wrap").show();

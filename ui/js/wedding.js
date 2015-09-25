@@ -159,7 +159,17 @@ $(function() {
 	$("#howmuch").on('focus', function(event, state) {
 		showMsgBox(howmuchNote);
 	});
+	$('[name="adults"]').on('change', function() {
+		$("#man-steak-text").html(steakText.format($(this).val()));
+	});
+	$('[name="vegetarians"]').on('change', function() {
+		$("#man-vegan-text").html(veganText.format($(this).val()));
+	});
+	$('[name="children"]').on('change', function() {
+		$("#man-children-text").html(childrenText.format($(this).val()));
+	});
 	//Submit
+
 	window.getParams = function() {
 		var invitationType;
 		if ($("[name='invitationType']").bootstrapSwitch('state') || false) {
@@ -235,7 +245,7 @@ $(function() {
 		});
 	});
 	$("#logout").click(function() {
-		FB.logout();
+		FB.logout(hideForm);
 	})
 
 	$("#clear-man").click(function(event) {

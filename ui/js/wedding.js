@@ -204,7 +204,6 @@ $(function() {
 	};
 	$("#submit").click(function() {
 		$("#submit").addClass("pro").html("");
-		debugger;
 		$.ajax({
 			type: "POST",
 			url: "guest",
@@ -235,6 +234,9 @@ $(function() {
 			}
 		});
 	});
+	$("#logout").click(function() {
+		FB.logout();
+	})
 
 	$("#clear-man").click(function(event) {
 		event.stopPropagation();

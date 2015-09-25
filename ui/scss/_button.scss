@@ -17,7 +17,7 @@ $btn-height: 30px;
     color: $control-color;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 60%;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
@@ -86,7 +86,89 @@ $btn-height: 30px;
     -ms-animation: fade 0.8s ease forwards;
     animation: fade 0.8s ease forwards;
 }
+$control-color: #305C99;
+#logout {
+    background: #fff;
+    -webkit-box-shadow: 0 0 0 2px $control-color;
+    box-shadow: 0 0 0 2px $control-color;
+    border: 0;
+    height: $btn-height;
+    //line-height: 36px;
+    width: 120px;
+    font-weight: 900;
+    font-size: 14px;
+    color: $control-color;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    outline: none;
+}
 
+#logout:hover {
+    background: $control-color;
+    color: #fff;
+}
+
+#logout.pro {
+    background-color: #b5b5b5;
+    background-image: url("http://andreasstorm.com/lib/loading.gif");
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-box-shadow: 0 0 0 2px #b5b5b5;
+    box-shadow: 0 0 0 2px #b5b5b5;
+    color: #fff;
+    -webkit-transition: background-color 0.2s ease;
+    -moz-transition: background-color 0.2s ease;
+    -o-transition: background-color 0.2s ease;
+    -ms-transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease;
+}
+
+#logout.finish {
+    background: $control-color;
+    -webkit-box-shadow: 0 0 0 2px $control-color;
+    box-shadow: 0 0 0 2px $control-color;
+    -webkit-transition: background-color, border-color 0.2s ease;
+    -moz-transition: background-color, border-color 0.2s ease;
+    -o-transition: background-color, border-color 0.2s ease;
+    -ms-transition: background-color, border-color 0.2s ease;
+    transition: background-color, border-color 0.2s ease;
+}
+
+#logout.finish:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    border-bottom: 4px #fff solid;
+    border-left: 4px #fff solid;
+    z-index: 9999;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    margin: -7px 0px 0px 44px;
+    -webkit-animation: fade 0.8s ease forwards;
+    -moz-animation: fade 0.8s ease forwards;
+    -o-animation: fade 0.8s ease forwards;
+    -ms-animation: fade 0.8s ease forwards;
+    animation: fade 0.8s ease forwards;
+}
 #reset {
     position: absolute;
     top: 75%;

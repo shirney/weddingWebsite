@@ -190,7 +190,8 @@ $(function() {
 			children: jQuery.isEmptyObject($('[name="children"]').val()) ? 0 : parseInt($('[name="children"]').val()),
 			address: jQuery.isEmptyObject($('#address').val()) ? "" : $('#address').val(),
 			emailAddress: jQuery.isEmptyObject($('#emailAddress').val()) ? "" : $('#emailAddress').val(),
-			comment: jQuery.isEmptyObject($('#comment').val()) ? "" : $('#comment').val()
+			comment: jQuery.isEmptyObject($('#comment').val()) ? "" : $('#comment').val(),
+			fbname: window.fbname
 		};
 		return params;
 	};

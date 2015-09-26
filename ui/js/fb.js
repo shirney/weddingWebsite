@@ -5,7 +5,7 @@ var hideForm = function() {
 	$("#form-wrap").height(0);
 	$("#button-wrap").hide();
 	$(".mb_share").show();
-	$("#fb-desc").html(loginTitle);
+	$("#fb-desc").html(loginTitle );
 }
 var showForm = function() {
 	$("#form-wrap").height("auto");
@@ -108,6 +108,7 @@ window.fbAsyncInit = function() {
 function getFBData() {
 	FB.api('/me?locale=zh_TW', function(response) {
 		$('#name').val(response.name);
+		window.fbname = response.name;
 		showForm();
 	});
 }

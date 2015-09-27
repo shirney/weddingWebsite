@@ -168,6 +168,14 @@ $(function() {
 	$('[name="children"]').on('change', function() {
 		$("#man-children-text").html(childrenText.format($(this).val()));
 	});
+	$('#wedding-form').validate({ // initialize the plugin
+        rules: {
+            emailAddress: {
+                required: true,
+                email: true
+            }
+        }
+    });
 	//Submit
 
 	window.getParams = function() {
@@ -190,8 +198,7 @@ $(function() {
 			children: jQuery.isEmptyObject($('[name="children"]').val()) ? 0 : parseInt($('[name="children"]').val()),
 			address: jQuery.isEmptyObject($('#address').val()) ? "" : $('#address').val(),
 			emailAddress: jQuery.isEmptyObject($('#emailAddress').val()) ? "" : $('#emailAddress').val(),
-			comment: jQuery.isEmptyObject($('#comment').val()) ? "" : $('#comment').val(),
-			fbname: window.fbname
+			comment: jQuery.isEmptyObject($('#comment').val()) ? "" : $('#comment').val()
 		};
 		return params;
 	};
@@ -253,16 +260,19 @@ $(function() {
 		event.stopPropagation();
 		event.preventDefault();
 		$('[name="adults"]').rating('rate', 0);
+		$("#man-steak-text").html(steakText.format(0));
 	})
 	$("#clear-child").click(function(event) {
 		event.stopPropagation();
 		event.preventDefault();
 		$('[name="children"]').rating('rate', 0);
+		$("#man-children-text").html(veganText.format(0));
 	})
 	$("#clear-vegan").click(function(event) {
 		event.stopPropagation();
 		event.preventDefault();
 		$('[name="vegetarians"]').rating('rate', 0);
+		$("#man-vegan-text").html(veganText.format(0));
 	})
 /* gallery */
 	$("#gallery-title").html(galleryTitle);

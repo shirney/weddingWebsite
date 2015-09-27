@@ -315,7 +315,7 @@ $rating-color: #797979;
 .man-child-filled {
 	background-image: url("ui/images/child-filled.svg");
 }
-#address-input {
+#address {
 	resize: none;
 }
 #comment {
@@ -341,6 +341,14 @@ $rating-color: #797979;
 	overflow: hidden;
 	transition: height 1s;
 	height: 0px;
+}
+.person-label {
+    line-height: 50px;
+    height: 50px;
+    text-align: right;
+    #man-steak-text, #man-children-text, #man-vegan-text {
+        padding-top: 0px;
+    } 
 }
 #button-wrap {
 	display: none;

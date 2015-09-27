@@ -247,30 +247,30 @@
                                 </div>
                             </div>
                             <div class="form-group" id="man-steak">
-                                <div class="col-sm-4 col-xs-4 form-field">
-                                    <button class="clear-btn" id="clear-man"></button>
+                                <div class="col-sm-4 col-xs-4 form-field person-label">
+                                    <label class="control-label" id="man-steak-text">1 位大人（葷）</label>
                                 </div>
                                 <div class="col-sm-8 col-xs-8 form-field">
                                     <input type="hidden" name="adults" class="rating" data-filled="fa man man-steak-filled" data-empty="fa man man-steak-empty" value="1"/>
-                                    <label class="control-label" id="man-steak-text">1 位大人（葷）</label>
+                                    <button class="clear-btn" id="clear-man"></button>
                                 </div>
                             </div>
                             <div class="form-group" id="man-vegan">
-                                <div class="col-sm-4 col-xs-4 form-field">
-                                    <button class="clear-btn" id="clear-vegan"></button>
+                                <div class="col-sm-4 col-xs-4 form-field person-label">
+                                    <label class="control-label" id="man-vegan-text">0 位大人（素）</label>
                                 </div>
                                 <div class="col-sm-8 col-xs-8 form-field">
                                     <input type="hidden" name="vegetarians" class="rating" data-filled="fa man man-vegan-filled" data-empty="fa man man-vegan-empty" />
-                                    <label class="control-label" id="man-vegan-text">大人（素）</label>
+                                    <button class="clear-btn" id="clear-vegan"></button>
                                 </div>
                             </div>
                             <div class="form-group" id="man-child">
-                                <div class="col-sm-4 col-xs-4 form-field">
-                                    <button class="clear-btn" id="clear-child"></button>
+                                <div class="col-sm-4 col-xs-4 form-field person-label">
+                                    <label class="control-label" id="man-children-text">0 位屁孩（兒童椅）</label>
                                 </div>
                                 <div class="col-sm-8 col-xs-8 form-field">
                                     <input type="hidden" name="children" class="rating fa-fw" data-filled="fa man man-child-filled" data-empty="fa man-child-empty man" />
-                                    <label class="control-label" id="man-children-text">屁孩（兒童椅）</label>
+                                    <button class="clear-btn" id="clear-child"></button>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -288,7 +288,7 @@
                             <div class="form-group" id="email-address-wrap" style="display:none">
                                 <label for="emailAddress" class="col-sm-4 col-xs-4 control-label">電子郵件？</label>
                                 <div class="col-sm-8 col-xs-8">
-                                    <input class="form-control" name="emailAddress" id="emailAddress" placeholder="不要喜帖請留白，就當你記住惹">
+                                    <input class="form-control" name="emailAddress" id="emailAddress" placeholder="不要喜帖請留白，就當你記住惹" type="email" pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -462,6 +462,7 @@
     <script src="ui/js/jquery.js"></script>
     <script src="ui/js/jquery.easing.1.3.js"></script>
     <script src="ui/js/jquery.lazyload.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="ui/js/bootstrap.min.js"></script>
     <!-- gallery -->

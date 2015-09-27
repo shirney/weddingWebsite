@@ -1,7 +1,9 @@
 $btn-height: 30px;
+$btn-width: 120px;
 .button-wrap {
     height: $btn-height;
     position: relative;
+    margin-top: 15px;
 }
 
 #submit {
@@ -11,13 +13,14 @@ $btn-height: 30px;
     border: 0;
     height: $btn-height;
     //line-height: 36px;
-    width: 120px;
+    width: $btn-width;
+    margin-left: $btn-width/2 + 15px;
     font-weight: 900;
     font-size: 14px;
     color: $control-color;
     position: absolute;
     top: 50%;
-    left: 60%;
+    left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
@@ -94,13 +97,14 @@ $control-color: #305C99;
     border: 0;
     height: $btn-height;
     //line-height: 36px;
-    width: 120px;
+    width: $btn-width;
     font-weight: 900;
     font-size: 14px;
     color: $control-color;
     position: absolute;
     top: 50%;
-    left: 30%;
+    left: 50%;
+    margin-left: -1*$btn-width/2 - 15px;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);

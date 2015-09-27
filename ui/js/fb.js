@@ -108,7 +108,6 @@ window.fbAsyncInit = function() {
 function getFBData() {
 	FB.api('/me?locale=zh_TW', function(response) {
 		$('#name').val(response.name);
-		window.fbname = response.name;
 		showForm();
 	});
 }

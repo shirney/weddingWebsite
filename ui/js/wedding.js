@@ -80,9 +80,9 @@ $(function() {
 	$('#introChiao').html(introChiao);
 	$('#introLin').html(introLin);
 	var setAboutUsHeight = function(){
-		$('#aboutUsImgContainer').height($('#aboutUsImg').height());
-		$('#aboutUsTextWrapChiao').height($('#aboutUsImg').height());
-		$('#aboutUsTextWrapLin').height($('#aboutUsImg').height());
+		$('#aboutUsImgContainer').height($('#aboutUsImg').height()+20);
+		$('#aboutUsTextWrapChiao').height($('#aboutUsImg').height()+20);
+		$('#aboutUsTextWrapLin').height($('#aboutUsImg').height()+20);
 	};
 	var addSelectDot = function(num) {
 		var domString = '<li class="img-btn" index="{INDEX}"><a></a></li>'.replace("{INDEX}", num);

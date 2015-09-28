@@ -80,9 +80,9 @@ $(function() {
 	$('#introChiao').html(introChiao);
 	$('#introLin').html(introLin);
 	var setAboutUsHeight = function(){
-		$('#aboutUsImgContainer').height($('#aboutUsImg').height()+20);
-		$('#aboutUsTextWrapChiao').height($('#aboutUsImg').height()+20);
-		$('#aboutUsTextWrapLin').height($('#aboutUsImg').height()+20);
+		$('#aboutUsImgContainer').height($('#aboutUsImg').height()+25);
+		$('#aboutUsTextWrapChiao').height($('#aboutUsImg').height()+25);
+		$('#aboutUsTextWrapLin').height($('#aboutUsImg').height()+25);
 	};
 	var addSelectDot = function(num) {
 		var domString = '<li class="img-btn" index="{INDEX}"><a></a></li>'.replace("{INDEX}", num);
@@ -95,6 +95,9 @@ $(function() {
 	var addBtnRow = function(theme) {
 		var aboutUsImgNum = themes[theme].aboutUsNum;
 		$('#btnRow').empty();
+		if ("NTU" != theme) {
+			return;
+		}
 		for (var i = 1; i <= aboutUsImgNum; i++) {
 			addSelectDot(i);
 		}

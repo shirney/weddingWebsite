@@ -5,7 +5,8 @@ var hideForm = function() {
 	$("#form-wrap").height(0);
 	$("#button-wrap").hide();
 	$(".mb_share").show();
-	$("#fb-desc").html(loginTitle );
+	$("#fb-desc").removeClass("dinner");
+	$("#fb-desc").addClass("please-login");
 }
 var showForm = function() {
 	$("#form-wrap").height("auto");
@@ -15,7 +16,8 @@ function statusChangeCallback(response, isFirstTime) {
 	if (response.status === 'connected') {
 		var auth = response.authResponse;
 		$(".mb_share").hide();
-		$("#fb-desc").html(loginTitleSuccess);
+		$("#fb-desc").addClass("dinner");
+		$("#fb-desc").removeClass("please-login");
 		window.accessToken = auth.accessToken;
 		window.userID = auth.userID;
 		$.ajax({

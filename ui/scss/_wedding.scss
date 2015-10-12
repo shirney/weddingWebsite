@@ -358,13 +358,32 @@ $rating-color: #797979;
 #button-wrap {
 	display: none;
 }
-#fb-desc {
-	text-align: center;
-    font-size: 3em;
+.please-login {
+    $width: 600px/2.5;
+    $height: 200px/2.5;
+    background-image:  url("ui/images/pleaselogin.png");
+    width: $width;
+    height: $height;
+    background-size: $width $height;
+    margin: 0px auto;
+}
+.dinner {
+    $width: 400px / 2;
+    $height: 391px /2;
+    background-image:  url("ui/images/form.png");
+    width: $width;
+    height: $height;
+    background-size: $width $height;
+    margin: 0px auto;
 }
 #gallery-title {
-    text-align: center;
-    font-size: 3em;
+    $width: 300px;
+    $height: $width/4;
+    background-image:  url("ui/images/gallery.png");
+    width: $width;
+    height: $height;
+    background-size: $width $height;
+    margin: 0px auto;
 }
 #gallery {
     display: none;

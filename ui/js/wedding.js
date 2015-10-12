@@ -158,7 +158,7 @@ $(function() {
 		}
 	});
 /* form */
-	$("#fb-desc").html(loginTitle);
+	//$("#fb-desc").html(loginTitle);
 	$("#howmuch").on('focus', function(event, state) {
 		showMsgBox(howmuchNote);
 	});
@@ -275,10 +275,10 @@ $(function() {
 		event.stopPropagation();
 		event.preventDefault();
 		$('[name="vegetarians"]').rating('rate', 0);
-		$("#man-vegan-text").html(veganText.format(0));
+		$("#man-vegan-text").html(childrenText.format(0));
 	})
 /* gallery */
-	$("#gallery-title").html(galleryTitle);
+	//$("#gallery-title span").html(galleryTitle);
 /* overall */
 	setAboutUsHeight();
 	window.showMsgBox = function(message) {

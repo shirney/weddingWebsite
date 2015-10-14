@@ -22,7 +22,7 @@ $(function() {
 			$('#'+key).removeClass('btn-checked');
 		});
 	};
-	var onChangeImg = function(num) {
+	var onChangeImg = function(num, dom) {
 		var path = $('#aboutUsImg').attr('src');
 		path = path.replace(/aboutUs(\d).jpg/, "aboutUs"+num+".jpg");
 		$('#aboutUsImg').attr("src", path);
@@ -36,6 +36,10 @@ $(function() {
 		path = $('#aboutUsImgHover').attr('src');
 		path = path.replace(/aboutUs(\d)-hover.jpg/, "aboutUs"+num+"-hover.jpg");
 		$('#aboutUsImgHover').attr("src", path);
+		$.each($(dom).siblings(), function(index, value) {
+			$(value).removeClass("img-btn-active");
+		});
+		$(dom).addClass("img-btn-active");
 	};
 	var onChangeAboutUsImg = function(imgRootPath, theme) {
 		var filename = "aboutUs{VERSION}.jpg";
@@ -87,8 +91,11 @@ $(function() {
 	var addSelectDot = function(num) {
 		var domString = '<li class="img-btn" index="{INDEX}"><a></a></li>'.replace("{INDEX}", num);
 		var dom = $.parseHTML(domString);
+		if (1 === num) {
+			$(dom).addClass("img-btn-active");
+		}
 		$(dom).on('click', function(){
-			onChangeImg(num);
+			onChangeImg(num, dom);
 		});
 		$('#btnRow').append(dom);
 	};
@@ -256,9 +263,11 @@ $(function() {
 		});
 	});
 	$("#logout").click(function() {
+		$("#logoutMsg").modal('show');
+	})
+	$("#logoutFB").click(function() {
 		FB.logout(hideForm);
 	})
-
 	$("#clear-man").click(function(event) {
 		event.stopPropagation();
 		event.preventDefault();

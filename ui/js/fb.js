@@ -7,6 +7,7 @@ var hideForm = function() {
 	$(".mb_share").show();
 	$("#fb-desc").removeClass("dinner");
 	$("#fb-desc").addClass("please-login");
+	$("#logoutMsg").modal('hide');
 }
 var showForm = function() {
 	$("#form-wrap").height("auto");

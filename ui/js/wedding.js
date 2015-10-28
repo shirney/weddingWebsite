@@ -230,8 +230,7 @@ $(function() {
 		$('[name="children"]').rating('rate', obj.children || 0);
 		$('#comment').val(obj.comment || "");
 	};
-	$("#submit").click(function() {
-		$("#submit").addClass("pro").html("");
+	window.onSendReq = function() {
 		$.ajax({
 			type: "POST",
 			url: "guest",
@@ -261,6 +260,10 @@ $(function() {
 				$("#submit").removeClass("pro").removeClass("finish").html("Submit");
 			}
 		});
+	};
+	$("#submit").click(function() {
+		$("#submit").addClass("pro").html("");
+		checkLoginState();
 	});
 	$("#logout").click(function() {
 		$("#logoutMsg").modal('show');

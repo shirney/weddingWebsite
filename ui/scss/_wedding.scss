@@ -10,7 +10,9 @@ $Beach-hover: #00A3D3;
 $Beach-checked: #007790;
 $control-color: $Garden-checked;
 $rating-color: #797979;
-
+body {
+    overflow-x: hidden;
+}
 .navbar .navbar-nav {
     display: inline-block;
     float: none;

@@ -304,14 +304,14 @@ $(function() {
 	$(window).on('resize', function() {
 		setAboutUsHeight();
 	});
-	$(function() {
+	(function() {
 		$("img.lazy").lazyload({
 			event: "lazyloadman"
 		});
-}	);
+	})();
 	$(window).bind("load", function() {
     var timeout = setTimeout(function() {
         $("img.lazy").trigger("lazyloadman")
-    }, 5000);
+    }, 200);
 });
 });

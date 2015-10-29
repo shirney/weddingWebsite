@@ -1,7 +1,7 @@
 (function ($, undefined) {
   'use strict';
 
-  var OFFSET = 5;
+  var OFFSET = 3;
 
   function Rating(element, options) {
     this.$input = $(element);

@@ -130,7 +130,7 @@ $(function() {
 		size: "small",
 		onColor: "controller",
 		offColor: "danger",
-		onText: "立馬輸入行事曆",
+		onText: "好窩",
 		offText: "不要咧"
 
 	});
@@ -281,13 +281,13 @@ $(function() {
 		event.stopPropagation();
 		event.preventDefault();
 		$('[name="children"]').rating('rate', 0);
-		$("#man-children-text").html(veganText.format(0));
+		$("#man-children-text").html(childrenText.format(0));
 	})
 	$("#clear-vegan").click(function(event) {
 		event.stopPropagation();
 		event.preventDefault();
 		$('[name="vegetarians"]').rating('rate', 0);
-		$("#man-vegan-text").html(childrenText.format(0));
+		$("#man-vegan-text").html(veganText.format(0));
 	})
 /* gallery */
 	//$("#gallery-title span").html(galleryTitle);

@@ -118,6 +118,12 @@ $(function() {
 	$('#aboutUsImg').on("mouseout", function(){
 		$('#aboutUsImg').stop().animate({opacity:1}, fadeTime);
 	});
+	$("#aboutUsTextWrapLin").on("mouseenter", function(){
+		$('#aboutUsImg').stop().animate({opacity:0}, fadeTime);
+	});
+	$(".aboutUsTextWrapChiao").on("mouseout", function(){
+		$('#aboutUsImg').stop().animate({opacity:1}, fadeTime);
+	});
 /* when and where */
 	
 /* rsvp */
@@ -140,10 +146,14 @@ $(function() {
 			stat.forEach(function(item) {
 				$('#'+item).show();
 			});
+			$("#howmuch").attr("placeholder", window.howmuchPlaceHolderYes);
+			$("#emailAddress").attr("placeholder", window.emailPlaceHolderYes);
 		} else {
 			stat.forEach(function(item) {
 				$('#'+item).hide();
 			});
+			$("#howmuch").attr("placeholder", window.howmuchPlaceHolderNo);
+			$("#emailAddress").attr("placeholder", window.emailPlaceHolderNo);
 		}
 	});
 	$('[name="adults"]').rating();
@@ -167,7 +177,11 @@ $(function() {
 /* form */
 	//$("#fb-desc").html(loginTitle);
 	$("#howmuch").on('focus', function(event, state) {
-		showMsgBox(howmuchNote);
+		if ($("#isComing").bootstrapSwitch('state')) {
+			showMsgBox(howmuchNoteYes);
+		} else {
+			showMsgBox(howmuchNoteNo);
+		}
 	});
 	$('[name="adults"]').on('change', function() {
 		$("#man-steak-text").html(steakText.format($(this).val()));
@@ -300,7 +314,7 @@ $(function() {
 	window.showSuccessMsgBox = function(message) {
 		$("#successMsg-text").html(message);
 		$('#successMsg').on('hidden.bs.modal', function (e) {
-  			$("#submit").removeClass("pro").removeClass("finish").html("Submit");
+  			$("#submit").removeClass("pro").removeClass("finish").html("Update");
 		})
 		$("#successMsg").modal('show');
 	}
